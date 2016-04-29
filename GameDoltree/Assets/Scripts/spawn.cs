@@ -11,13 +11,16 @@ public class spawn : MonoBehaviour {
 
 	void Start()
 	{
-		InvokeRepeating ("spawnBox", 1f, 3f);
+        InvokeRepeating("spawnBox", 1f, 0.75f);	
 	}
 
 	void Update ()
 	{
-
-	}
+        if (scriptGameController.isGameOver)
+        {
+            CancelInvoke();
+        }
+    }
 
 	void spawnBox ()
 	{
